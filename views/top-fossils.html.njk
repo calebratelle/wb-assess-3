@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{# <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,5 +12,26 @@
       <h2>Liked {{ fossils[0].num_likes }} times.</h2>
       <img src="{{ fossils[0].img }}" />
     </div>
+  </body>
+</html> #}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Most Liked Fossils</title>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+  </head>
+  <body>
+    <h1>Welcome, {{ userName }}</h1>
+    <h2>Top Fossils</h2>
+    {% for fossilKey, fossilData in fossils %}
+      <div class="fossil-div">
+        <h3>{{ userName }}, this is a {{ fossilData.name }}</h3>
+        <h2>Liked {{ fossilData.num_likes }} times.</h2>
+        <img src="{{ fossilData.img }}" alt="{{ fossilData.name }}"/>
+      </div>
+    {% endfor %}
   </body>
 </html>
