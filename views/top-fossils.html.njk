@@ -33,5 +33,14 @@
         <img src="{{ fossilData.img }}" alt="{{ fossilData.name }}"/>
       </div>
     {% endfor %}
+    <form action="/like-fossil" method="post">
+      <label for="fossilSelect">Select a fossil to like:</label>
+      <select id="fossilSelect" name="fossilId">
+        {% for fossilKey, fossilData in fossils %}
+          <option value="{{ fossilKey }}">{{ fossilData.name }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Like</button>
+    </form>
   </body>
 </html>
